@@ -13,7 +13,7 @@ julia: $(OBJS)
 	gcc -MM $(CFLAGS) $*.c > $*.d
 
 run: julia 
-	./julia 0.0001 10 0.000002 2 2 20 0.000002 0.0000004
+	./julia 0.001 10 0.0005 5 5 50 0.0005 0.0004
 
 # remove compilation products
 clean:
