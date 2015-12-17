@@ -24,8 +24,6 @@ CPLANE new_cplane(const VALUE xmin, const VALUE xmax, const VALUE ymin, const VA
   c.xpoints = xpoints;
   c.ypoints = ypoints;
 
-  // set loop to populate the values in cplane
-
 
   return c;
 }

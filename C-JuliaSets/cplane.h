@@ -1,5 +1,5 @@
 // Define types as abstraction layer to protect against implementation changes
-typedef unsigned long int INDEX;
+typedef long int INDEX;
 typedef long double VALUE;
 
 // Use abstract types inside matrix definition for robustness

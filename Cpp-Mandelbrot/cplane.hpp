@@ -1,24 +1,31 @@
-#include <iostream> 
-
-// overloading functions
 #include <iostream>
-using namespace std;
+#include <boost/numeric/ublas/matrix.hpp>
 
-int operate (int a, int b)
-{
-  return (a*b);
-}
+// define types
 
-double operate (double a, double b)
-{
-  return (a/b);
-}
+typedef long int INDEX;
+typedef long double VALUE;
 
-int main ()
-{
-  int x=5,y=2;
-  double n=5.0,m=2.0;
-  cout << operate (x,y) << '\n';
-  cout << operate (n,m) << '\n';
-  return 0;
-}
+
+// store COMPLEX in std::complex<long double> types
+typedef std::complex<long double> COMPLEX;
+
+// Store mat in boost::numeric::ublas::matrix<std::complex<long double> > type 
+typedef boost::numeric::ublas::matrix<std::complex<long double> > MAT;  
+
+class CPLANE {
+	public:
+	  VALUE xmin;
+	  VALUE xmax;
+	  VALUE ymin;
+	  VALUE ymax;
+	  INDEX xpoints;
+	  INDEX ypoints;
+	  MAT mat;
+
+	  // declare functions used in .cpp
+	  MAT set(VALUE , VALUE , VALUE , VALUE , INDEX , INDEX );
+	  COMPLEX get(MAT, INDEX, INDEX);
+
+};
+
