@@ -27,9 +27,6 @@ juliaset_zoomout.png >> zoom out of juliaset image at settings:
 Juliaset_zoom1.png >> zoom in at the following settings: 
 >C-JuliaSets/julia -1 1 -1 1 1920 1920 -1.037 0.17 > juliaset.csv
 
-mandelbrot_zoom2.png >> zoom in at the following settings: 
->C-JuliaSets/julia -0.01 0.02 -0.01 0.02 1920 1920 -1.037 0.17 > juliaset.csv
-
 ## mandelbrot images
 The mandelbrot images chosen are as follows:
 
@@ -43,6 +40,7 @@ mandelbrot_zoomout.png >> zoom out of mandelbrot image at settings:
 mandelbrot_zoom1.png >> zoom in at the following settings: 
 >Cpp-Mandelbrot/mandelbrot -1 1 -1 1 1920 1920 > mandelbrot.csv
 
-mandelbrot_zoom2.png >> zoom in at the following settings: 
->Cpp-Mandelbrot/mandelbrot -0.01 0.02 -0.01 0.02 1920 1920 > mandelbrot.csv 
+
+##Remark: 
+The resolution of the image in png format is unaffected by zoom level due to the fact that the data is generated procedurally in both julia and mandelbrot which shows the advantage of such algorithms. 
 
