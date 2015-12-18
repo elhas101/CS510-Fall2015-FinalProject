@@ -1,7 +1,7 @@
 # Summary
 
 The data generation script is executed with the following command: 
->>> sh ./generate_output.sh
+> sh ./generate_output.sh
 
 Which generates juliaset.csv and mandelbrot.csv depending on the settings in the generate_output.sh.
 
