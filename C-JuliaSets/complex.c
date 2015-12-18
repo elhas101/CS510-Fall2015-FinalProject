@@ -52,7 +52,7 @@ prints the string "z = x + y i" where x and y are its
 real and imaginary parts.
 */
 
-void COMPLEX_print(COMPLEX z) {
+void complex_print(COMPLEX z) {
 	printf("z = %1f + %1fi", z.x, z.y);
 };
 

@@ -24,6 +24,21 @@ CPLANE new_cplane(const VALUE xmin, const VALUE xmax, const VALUE ymin, const VA
   c.xpoints = xpoints;
   c.ypoints = ypoints;
 
+  // set step values
+
+  VALUE col_step = (xmax - xmin)/(xpoints);
+  VALUE row_step = (ymax - ymin)/(ypoints);
+
+  // loop to set values for the matrix
+  for(rows=0; rows<ypoints; rows++) {
+    for(cols=0; cols<xpoints; cols++) {
+
+      v.x = xmin + cols*col_step;
+      v.y = ymin + rows*row_step;
+      set(&c,rows,cols,v);
+
+     }
+  }
 
   return c;
 }
@@ -50,8 +65,8 @@ COMPLEX get(const CPLANE *c, const INDEX row, const INDEX col) {
   // the matrix mat, then jump forward row number of rows
   // and col number of columns.  Return the value inside.
   COMPLEX n;
-  n.x = 0;
-  n.y = 0;
+  n.x = 1;
+  n.y = 1;
   if (row < 0 || col < 0 || row >= c->ypoints || col >= c->xpoints) {
     fprintf(stderr, "ERROR: indexing matrix outside bounds");
     return n;

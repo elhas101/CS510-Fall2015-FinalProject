@@ -6,5 +6,5 @@ echo "Executing julia and mandelbrot..."
 
 echo "Generating datafiles..."
 # Generate default csv datafiles in main directory
-C-JuliaSets/julia -2 2 -2 2 1000 1000 -1.037 0.17 > juliaset.csv
-Cpp-Mandelbrot/mandelbrot -2 2 -2 2 1000 1000 > mandelbrot.csv 
+C-JuliaSets/julia -0.1 0.1 -0.1 0.1 1920 1920 -1.037 0.17 > juliaset.csv
+Cpp-Mandelbrot/mandelbrot -0.1 0.1 -0.1 0.1 1920 1920 > mandelbrot.csv 

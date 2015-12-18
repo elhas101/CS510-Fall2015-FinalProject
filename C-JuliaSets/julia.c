@@ -18,7 +18,6 @@ int main(int argc, char **argv) {
   CPLANE cp;
   COMPLEX c, z, v, tmp;
   int MAXITER=256;
-  char *num;
   VALUE xmin = atoi (argv[1]);
   VALUE xmax = atoi (argv[2]);
   VALUE ymin = atoi (argv[3]);
@@ -33,7 +32,7 @@ int main(int argc, char **argv) {
   
   // generate a COMPLEX plane
   cp = new_cplane(xmin, xmax, ymin, ymax, xpoints, ypoints);
-  
+
   //  iterate over a CPLANE that is created with the command line arguments
   for(row=0; row<ypoints; row++) {
     for(col=0; col<xpoints; col++) {
@@ -46,14 +45,15 @@ int main(int argc, char **argv) {
       */
       int iter = 0;
       while (1) {
-        tmp = juliamap(z, c);
-        iter++;
+
+        z = juliamap(z, c);
+        iter = ++iter;
         if (abs(z.x+z.y) > 2) {
-          //printf("ABS(z) > 2. %d \n", iter);
+          printf("%Lf,%Lf,%d \n", v.x, v.y, iter);
           break;
         };
         if (iter >= MAXITER) {
-          //printf("Exceeded MAXITER. %d, %d \n", iter, 0);
+          printf("%Lf,%Lf,%d \n", v.x, v.y, 0);
           break;
         };
       };
