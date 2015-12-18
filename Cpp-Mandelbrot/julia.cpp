@@ -1,6 +1,6 @@
 #include <vector>
 #include <iostream>
-#include <string>
+#include <string.h>
 #include "julia.h"
 
 

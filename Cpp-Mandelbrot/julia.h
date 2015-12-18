@@ -1,6 +1,10 @@
 // Include library
 #include <complex>
+#include <vector>
 #include <iostream>
+#include <string>
+#include <sstream>
+#include <fstream>
 #include <boost/numeric/ublas/matrix.hpp>
 #include <boost/numeric/ublas/io.hpp>
 

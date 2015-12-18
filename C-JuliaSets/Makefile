@@ -1,7 +1,7 @@
 OBJS := cplane.o julia.o complex.o
 
 # link
-julia: $(OBJS)
+all: $(OBJS)
 	gcc $(OBJS) -o julia
 
 # pull in dependency info for *existing* .o files
@@ -12,8 +12,8 @@ julia: $(OBJS)
 	gcc -c $(CFLAGS) $*.c -o $*.o
 	gcc -MM $(CFLAGS) $*.c > $*.d
 
-run: julia 
-	./julia 0.001 10 0.0005 5 5 50 0.0005 0.0004
+julia: all 
+	./julia -2 2 -2 2 1000 1000 -1.037 0.17
 
 # remove compilation products
 clean:

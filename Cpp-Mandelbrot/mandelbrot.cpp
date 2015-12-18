@@ -3,6 +3,8 @@
 #include "julia.h"
 
 using namespace std;
+
+
 // main function where the juliaset program is run 
 int main(int argc, char **argv) {
 
@@ -17,6 +19,9 @@ int main(int argc, char **argv) {
   CPLANE cp;
 
   int MAXITER=256;
+
+
+
   VALUE xmin = atoi (argv[1]);
   VALUE xmax = atoi (argv[2]);
   VALUE ymin = atoi (argv[3]);
@@ -31,7 +36,6 @@ int main(int argc, char **argv) {
   
   // generate a COMPLEX plane
   mat = cp.set(xmin, xmax, ymin, ymax, xpoints, ypoints);
-  
   //  iterate over a CPLANE that is created with the command line arguments
   for(row=0; row<ypoints; row++) {
     for(col=0; col<xpoints; col++) {
@@ -41,15 +45,19 @@ int main(int argc, char **argv) {
       iterations exceeds MAXITER=256
       */
       int iter = 0;
+
+      z.real() = 0;
+      z.imag() = 0;
+
       while (1) {
         z = juliamap(z, c);
-        iter++;
-        if (abs(z) > 2) {
-          cout << "ABS(z) > 2. " << iter << endl;
+        ++iter;
+        if (abs(z.real() + z.imag()) > 2) {
+          cout << z.real() << "," <<  z.imag() << "," <<  iter << endl;
           break;
         };
         if (iter >= MAXITER) {
-          cout << "Exceeded MAXITER. " << iter << " " << 0 << endl;
+          cout << z.real() << "," << z.imag() << "," <<  0 << endl;
           break;
         };
       };

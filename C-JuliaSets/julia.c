@@ -49,11 +49,11 @@ int main(int argc, char **argv) {
         tmp = juliamap(z, c);
         iter++;
         if (abs(z.x+z.y) > 2) {
-          printf("ABS(z) > 2. %d \n", iter);
+          //printf("ABS(z) > 2. %d \n", iter);
           break;
         };
         if (iter >= MAXITER) {
-          printf("Exceeded MAXITER. %d, %d \n", iter, 0);
+          //printf("Exceeded MAXITER. %d, %d \n", iter, 0);
           break;
         };
       };
